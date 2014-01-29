@@ -1,0 +1,11 @@
+function [Imagen] = abrirImagen()
+
+[ruta, cancelado] = imgetfile;
+
+if ~cancelado
+    Imagen = imread(ruta);
+    if ndims
+    Imagen = rgb2gray(Imagen);
+else
+    Imagen = cancelado
+end

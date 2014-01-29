@@ -1,0 +1,24 @@
+function [I_norm] = normalizacion(I_orig)
+    min1 = min(min(I_orig));
+    max1 = max(max(I_orig));
+    
+    %I_norm = I_orig .*  255 ./ (max1 - min1);
+    
+    menor = min(min(I));
+
+if menor < 0
+    I = I-menor;
+end
+
+mayor = max(max(I));
+
+if mayor > 256
+    I2 = ((double(I)*256.0)/double(mayor));
+else
+    I2 = I;
+end
+
+    I_norm = I2;
+    
+    I_norm = uint(I_norm);
+  
